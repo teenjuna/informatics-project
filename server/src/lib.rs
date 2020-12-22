@@ -12,7 +12,7 @@ pub struct Painting {
 
 impl Painting {
     pub fn load_info(id: u16) -> Result<Painting, Error> {
-        let path = Path::new("data").join("infos").join(id.to_string());
+        let path = Path::new("data").join("infos").join(format!("{}.txt", id));
         let contents = fs::read_to_string(path).map_err(|err| match err.kind() {
             std::io::ErrorKind::NotFound => Error::InfoNotFound(id),
             _ => Error::Other(err.into()),
