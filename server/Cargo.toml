@@ -1,15 +1,9 @@
 [package]
-name = "server"
-version = "0.1.0"
 authors = ["Alex Ryapolov <ryapolov@pm.me>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+name = "server"
+version = "0.2.0"
 
 [dependencies]
-actix-web = "3.3.2"
-anyhow = "1.0.36"
-serde = "1.0.118"
-serde_json = "1.0.60"
-thiserror = "1.0.22"
-actix-files = "0.4.1"
+tokio = {version = "0.2", features = ["full"]}
+warp = "0.2"
