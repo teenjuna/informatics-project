@@ -61,7 +61,7 @@ impl Reply for Image {
         let mut data: Vec<u8> = Vec::new();
         match self.0.read_to_end(&mut data) {
             Ok(_) => Response::builder()
-                .header(CONTENT_TYPE, HeaderValue::from_static("image/png"))
+                .header(CONTENT_TYPE, HeaderValue::from_static("image/jpeg"))
                 .body(data.into())
                 .unwrap(),
             Err(err) => Response::builder()
