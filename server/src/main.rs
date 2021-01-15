@@ -13,7 +13,7 @@ async fn main() {
     let api = info.or(image);
 
     println!("Starting server on http://127.0.0.1:8080");
-    warp::serve(api).run(([127, 0, 0, 1], 8080)).await;
+    warp::serve(api).run(([0, 0, 0, 0], 8080)).await;
 }
 
 mod handlers {
